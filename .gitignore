@@ -6,5 +6,6 @@
 /doc/
 /pkg/
 /spec/reports/
+/spec/internal/logs/
 /tmp/
 *.sqlite3
