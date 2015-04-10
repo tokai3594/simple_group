@@ -1,10 +1,12 @@
-# SimpleGroup
+# simple_group
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/simple_groups`. To experiment with that code, run `bin/console` for an interactive prompt.
+simple_group gem is able to add group function to ActiveRecord.
 
-TODO: Delete this and the text above, and describe your gem
+[![Build Status](https://travis-ci.org/patorash/simple_group.svg?branch=master)](https://travis-ci.org/patorash/simple_group)
 
 ## Installation
+
+### Rails 4.0+
 
 Add this line to your application's Gemfile:
 
@@ -14,15 +16,76 @@ gem 'simple_groups'
 
 And then execute:
 
-    $ bundle
+    $ bundle install
 
-Or install it yourself as:
+### Database Migrations
 
-    $ gem install simple_groups
+simple_group uses a simple_group_combinations table to store all group information.
+To genarate and run the migration just use.
+
+    $ bin/rails g simple_group:migration
+    $ bin/rake db:migrate
 
 ## Usage
 
-TODO: Write usage instructions here
+### Group item model
+
+Animal model
+
+```ruby
+class Animal < ActiveRecord::Base
+  groupable
+  validates :name, presence: true
+end
+```
+
+Fruit model
+
+```ruby
+class Fruit < ActiveRecord::Base
+  groupable
+  validates :name, presence: true
+end
+```
+
+
+### Group model
+
+```ruby
+class MyGroup < ActiveRecord::Base
+  add_group_function
+
+  validates :name, presence: true
+  validates :user, presence: true
+end
+```
+
+### Example
+
+```ruby
+user = User.create(name: 'Taro')
+group = MyGroup.create(name: 'Animals', user: user)
+
+# group add a dog
+dog = Animal.create(name: 'dog')
+group.add(dog)
+
+# cat add to group
+cat = Animal.create(name: 'cat')
+cat.add_to_group(group)
+
+# group remove a dog
+group.remove(dog)
+
+# item list in group
+group.group_items
+
+# Only animal
+group.for_type(Animal)
+
+# Only fruit
+group.for_type(Fruit)
+```
 
 ## Development
 
