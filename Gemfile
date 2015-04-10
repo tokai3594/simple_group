@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in simple_groups.gemspec
+# Specify your gem's dependencies in simple_group.gemspec
 gemspec
 
 rails_version = ENV['RAILS_VERSION'] || 'default'
