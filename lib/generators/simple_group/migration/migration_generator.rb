@@ -24,7 +24,7 @@ module SimpleGroup
 
     def create_migration_file
       if self.class.orm_has_migration?
-        migration_template 'migration.rb', 'db/migrate/simple_group_migration'
+        migration_template 'migration.rb', 'db/migrate/simple_group_migration.rb'
       end
     end
   end
