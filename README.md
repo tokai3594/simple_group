@@ -3,6 +3,9 @@
 simple_group gem is able to add group function to ActiveRecord.
 
 [![Build Status](https://travis-ci.org/patorash/simple_group.svg?branch=master)](https://travis-ci.org/patorash/simple_group)
+[![Dependency Status](https://gemnasium.com/patorash/simple_group.svg)](https://gemnasium.com/patorash/simple_group)
+[![Code Climate](https://codeclimate.com/github/patorash/simple_group/badges/gpa.svg)](https://codeclimate.com/github/patorash/simple_group)
+[![Test Coverage](https://codeclimate.com/github/patorash/simple_group/badges/coverage.svg)](https://codeclimate.com/github/patorash/simple_group)
 
 ## Installation
 
