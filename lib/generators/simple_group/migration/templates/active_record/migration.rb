@@ -7,9 +7,11 @@ class SimpleGroupMigration < ActiveRecord::Migration
     end
 
     if ActiveRecord::VERSION::MAJOR < 4
-      add_index :simple_groups, [:group_item_id, :group_item_type]
-      add_index :simple_groups, [:group_id, :group_type]
+      add_index :simple_group_combinations, [:group_item_id, :group_item_type]
+      add_index :simple_group_combinations, [:group_id, :group_type]
     end
+    add_index :simple_group_combinations, [:group_item_id, :group_item_type, :group_id, :group_type],
+              unique: true, name: :index_simple_group_combinations
   end
 
   def self.down

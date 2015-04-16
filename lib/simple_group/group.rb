@@ -10,9 +10,18 @@ module SimpleGroup
       end
     end
 
+    def include?(model)
+      raise SimpleGroup::GroupNotAllowError unless model.class.groupable?
+      SimpleGroup::Combination.exists?(group: self, group_item: model)
+    end
+
+    def exclude?(model)
+      !include?(model)
+    end
+
     def add(model)
       raise SimpleGroup::GroupNotAllowError unless model.class.groupable?
-      SimpleGroup::Combination.create(group: self, group_item: model)
+      SimpleGroup::Combination.new(group: self, group_item: model).save
     end
 
     def remove(model)

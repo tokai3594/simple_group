@@ -16,6 +16,7 @@ module SimpleGroup
 
     validates :group_item_id, presence: true
     validates :group_id, presence: true
+    validates_uniqueness_of :group_id, scope: [:group_type, :group_item_id, :group_item_type]
   end
 
   class GroupNotAllowError < Exception; end

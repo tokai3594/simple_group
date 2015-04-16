@@ -33,9 +33,20 @@ module SimpleGroup
           subject.add(dog)
         end
 
+        it 'should include in Favorites group' do
+          expect(subject.include?(dog)).to be_truthy
+        end
+
+        it 'should not exclude in Favorites group' do
+          expect(subject.exclude?(dog)).to be_falsey
+        end
+
         it 'should remove a dog in Favorites group' do
           expect(subject.remove(dog)).to be_truthy
-          true
+        end
+
+        it 'should not add a dog in Favorites group' do
+          expect(subject.add(dog)).to be_falsey
         end
       end
 
