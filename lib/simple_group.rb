@@ -5,7 +5,7 @@ require "simple_group/version"
 
 module SimpleGroup
   if defined?(ActiveRecord::Base)
-    require 'simple_group/extenders/groop'
+    require 'simple_group/extenders/group'
     require 'simple_group/extenders/group_item'
     require "simple_group/group"
     require "simple_group/group_item"

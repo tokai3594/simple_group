@@ -3,6 +3,7 @@ module SimpleGroup
 
     def self.included(base)
       base.class_eval do
+        belongs_to :group_item, polymorphic: true
         has_many :combinations, :class_name => 'SimpleGroup::Combination', :as => :group_item, :dependent => :destroy do
           def groups
             includes(:group).map(&:group)
