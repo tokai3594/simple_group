@@ -3,7 +3,7 @@ class SimpleGroupMigration < ActiveRecord::Migration
     create_table :simple_group_combinations do |t|
       t.references :group_item, polymorphic: true
       t.references :group, polymorphic: true
-      t.timestamp
+      t.timestamps
     end
 
     if ActiveRecord::VERSION::MAJOR < 4

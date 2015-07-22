@@ -2,7 +2,7 @@ ActiveRecord::Schema.define do
   create_table :simple_group_combinations, force: true do |t|
     t.references :group_item, polymorphic: true
     t.references :group, polymorphic: true
-    t.timestamp
+    t.timestamps
   end
 
   if ActiveRecord::VERSION::MAJOR < 4
