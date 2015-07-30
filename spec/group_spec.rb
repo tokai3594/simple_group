@@ -64,5 +64,17 @@ module SimpleGroup
         end
       end
     end
+
+    describe 'when create group' do
+      include_context 'prepare_data'
+      subject { MyGroup.new(name: 'New Group', user: user) }
+
+      it 'should save with combinations' do
+        subject.combinations.build(group_item: orange)
+        subject.combinations.build(group_item: dog)
+        expect(subject).to be_valid
+        expect(subject.save).to be_truthy
+      end
+    end
   end
 end
