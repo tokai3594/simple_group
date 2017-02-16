@@ -22,7 +22,7 @@ module SimpleGroup
       it 'should not add a tulip in Favorites group' do
         expect {
           tulip.add_to_group(my_group)
-        }.to raise_error
+        }.to raise_error NoMethodError
       end
     end
   end

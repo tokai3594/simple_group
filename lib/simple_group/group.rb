@@ -28,9 +28,9 @@ module SimpleGroup
     def remove(model)
       raise_error unless model.class.groupable?
       group = SimpleGroup::Combination.where(
-          group_type: self.class,
+          group_type: self.class.name,
           group_id: self,
-          group_item_type: model.class,
+          group_item_type: model.class.name,
           group_item_id: model
       ).first
       if group.present?

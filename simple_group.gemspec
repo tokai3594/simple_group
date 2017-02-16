@@ -22,6 +22,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "pry"
   spec.add_development_dependency "rspec", ">= 3.0.0"
   spec.add_development_dependency "sqlite3"
-  spec.add_development_dependency "database_rewinder", "~> 0.5.1"
+  spec.add_development_dependency "database_rewinder", '~> 0.8.0'
   spec.add_development_dependency 'combustion', '~> 0.5.3'
 end
