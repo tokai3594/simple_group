@@ -11,8 +11,8 @@ module SimpleGroup
     belongs_to :group, polymorphic: true
     belongs_to :group_item, polymorphic: true
 
-    scope :for_type, lambda { |klass| where(group_item_type: klass) }
-    scope :by_type,  lambda { |klass| where(group_type: klass) }
+    scope :for_type, lambda { |klass| where(group_item_type: klass.is_a?(Class) ? klass.name : klass) }
+    scope :by_type,  lambda { |klass| where(group_type: klass.is_a?(Class) ? klass.name : klass) }
 
     validates :group_item, presence: true
     validates :group, presence: true

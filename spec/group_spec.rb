@@ -62,6 +62,12 @@ module SimpleGroup
           expect(subject.for_type(Animal).count).to eq 3
           expect(subject.for_type(Fruit).count).to eq 3
         end
+
+        it 'should filter by ClassName' do
+          expect(subject.count).to eq 6
+          expect(subject.for_type(Animal.name).count).to eq 3
+          expect(subject.for_type(Fruit.name).count).to eq 3
+        end
       end
     end
 

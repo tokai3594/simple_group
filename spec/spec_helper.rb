@@ -3,6 +3,7 @@ require 'simple_group'
 require 'bundler/setup'
 require 'combustion'
 require 'database_rewinder'
+require 'pry'
 
 Combustion.initialize! :active_record
 
