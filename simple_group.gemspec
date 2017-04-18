@@ -18,10 +18,10 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", ">= 1.7.6"
-  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "rake"
   spec.add_development_dependency "pry"
   spec.add_development_dependency "rspec", ">= 3.0.0"
   spec.add_development_dependency "sqlite3"
-  spec.add_development_dependency "database_rewinder", '~> 0.8.0'
-  spec.add_development_dependency 'combustion', '~> 0.5.3'
+  spec.add_development_dependency "database_rewinder"
+  spec.add_development_dependency 'combustion'
 end
