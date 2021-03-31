@@ -1,7 +1,5 @@
-require 'spec_helper'
-
 module SimpleGroup
-  describe GroupItem, type: :model do
+  RSpec.describe GroupItem, type: :model do
     it "should not be a groupable" do
       expect(Flower).not_to be_groupable
     end

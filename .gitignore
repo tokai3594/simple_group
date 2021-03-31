@@ -9,3 +9,5 @@
 /spec/internal/log/
 /tmp/
 *.sqlite3
+.rspec_status
+gemfiles/*.gemfile.lock

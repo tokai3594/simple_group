@@ -1,4 +1,4 @@
-class SimpleGroupMigration < ActiveRecord::Migration
+class SimpleGroupMigration < ActiveRecord::Migration<%= migration_version %>
   def self.up
     create_table :simple_group_combinations do |t|
       t.references :group_item, polymorphic: true
