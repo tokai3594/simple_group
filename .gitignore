@@ -8,6 +8,14 @@
 /spec/reports/
 /spec/internal/log/
 /tmp/
-*.sqlite3
+/log/
+
+# rspec failure tracking
 .rspec_status
-gemfiles/*.gemfile.lock
+.ruby-version
+Gemfile.lock
+.circleci/config.processed.yml
+
+/gemfiles/*.gemfile.lock
+/gemfiles/.bundle
+*.sqlite3
