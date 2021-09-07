@@ -24,8 +24,20 @@ module SimpleGroup
 
     def create_migration_file
       if self.class.orm_has_migration?
-        migration_template 'migration.rb', 'db/migrate/simple_group_migration.rb'
+        migration_template 'migration.rb',
+                           'db/migrate/simple_group_migration.rb',
+                           migration_version: migration_version
       end
+    end
+
+    def migration_version
+      if over_rails5?
+        "[#{Rails::VERSION::MAJOR}.#{Rails::VERSION::MINOR}]"
+      end
+    end
+
+    def over_rails5?
+      Rails::VERSION::MAJOR >= 5
     end
   end
 end

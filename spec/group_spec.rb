@@ -1,7 +1,5 @@
-require 'spec_helper'
-
 module SimpleGroup
-  describe Group, type: :model do
+  RSpec.describe Group, type: :model do
     it "should not added group function" do
       expect(User).not_to be_added_group_function
     end

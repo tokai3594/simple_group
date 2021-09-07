@@ -1,7 +1,7 @@
 ActiveRecord::Schema.define do
   create_table :simple_group_combinations, force: true do |t|
-    t.references :group_item, polymorphic: true, index: { name: 'simple_group_combination_group_item' }
-    t.references :group, polymorphic: true, index: { name: 'simple_group_combination_group' }
+    t.references :group_item, polymorphic: true, index: { name: :simple_group_combination_group_item }
+    t.references :group, polymorphic: true, index: { name: :simple_group_combination_group }
     t.timestamps
   end
 
