@@ -2,13 +2,12 @@
 
 simple_group gem is able to add group function to ActiveRecord.
 
-[![CircleCI](https://circleci.com/gh/patorash/acts_as_footprintable.svg?style=svg)](https://circleci.com/gh/patorash/acts_as_footprintable)
 [![Code Climate](https://codeclimate.com/github/patorash/simple_group/badges/gpa.svg)](https://codeclimate.com/github/patorash/simple_group)
 [![Test Coverage](https://codeclimate.com/github/patorash/simple_group/badges/coverage.svg)](https://codeclimate.com/github/patorash/simple_group)
 
 ## Installation
 
-### Rails 4.0+
+### Rails 5.0+
 
 Add this line to your application's Gemfile:
 
