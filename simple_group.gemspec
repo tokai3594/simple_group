@@ -12,17 +12,17 @@ Gem::Specification.new do |spec|
   spec.description   = %q{simple_group is able to add group function to ActiveRecord.}
   spec.homepage      = "https://github.com/patorash/simple_group"
   spec.license       = "MIT"
+  spec.required_ruby_version = Gem::Requirement.new(">= 2.6.0")
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency 'bundler', '~> 2.1'
+  spec.add_dependency 'rails', '< 7.0.0', '>= 5.0.0'
   spec.add_development_dependency 'rake', '>= 12.3.3'
   spec.add_development_dependency "pry"
   spec.add_development_dependency "rspec", ">= 3.0.0"
   spec.add_development_dependency "sqlite3"
   spec.add_development_dependency 'combustion', '~> 1.3'
   spec.add_development_dependency 'database_cleaner', '~> 2.0'
-  spec.add_development_dependency 'rspec_junit_formatter', '~> 0.4.1'
 end
