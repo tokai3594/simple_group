@@ -2,6 +2,8 @@
 
 simple_group gem is able to add group function to ActiveRecord.
 
+[![Test](https://github.com/patorash/simple_group/actions/workflows/test.yml/badge.svg)](https://github.com/patorash/simple_group/actions/workflows/test.yml)
+
 [![Code Climate](https://codeclimate.com/github/patorash/simple_group/badges/gpa.svg)](https://codeclimate.com/github/patorash/simple_group)
 [![Test Coverage](https://codeclimate.com/github/patorash/simple_group/badges/coverage.svg)](https://codeclimate.com/github/patorash/simple_group)
 
