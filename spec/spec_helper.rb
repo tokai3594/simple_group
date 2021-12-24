@@ -1,11 +1,9 @@
-require 'rubygems'
-require 'simple_group'
-require 'bundler/setup'
-require 'combustion'
+require 'active_record'
 require 'database_cleaner/active_record'
+require 'simple_group'
 require 'pry'
 
-Combustion.initialize! :active_record
+Dir["#{Dir.pwd}/spec/internal/app/models/*.rb"].each(&method(:require))
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -19,6 +17,29 @@ RSpec.configure do |config|
   end
 
   config.before(:suite) do
+    ActiveRecord::Base.establish_connection('adapter' => 'sqlite3', 'database' => ':memory:')
+    ActiveRecord::Schema.define do
+      create_table :simple_group_combinations, force: true do |t|
+        t.references :group_item, polymorphic: true, index: { name: :simple_group_combination_group_item }
+        t.references :group, polymorphic: true, index: { name: :simple_group_combination_group }
+        t.timestamps
+      end
+
+      add_index :simple_group_combinations, [:group_item_id, :group_item_type, :group_id, :group_type],
+                unique: true, name: :index_simple_group_combinations
+
+      %i(users fruits animals flowers).each do |table_name|
+        create_table table_name, force: true do |t|
+          t.string :name
+        end
+      end
+
+      create_table :my_groups, force: true do |t|
+        t.string :name
+        t.references :user
+      end
+    end
+
     DatabaseCleaner.strategy = :truncation
   end
 
