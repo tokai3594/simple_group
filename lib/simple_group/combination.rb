@@ -2,12 +2,6 @@ module SimpleGroup
   class Combination < ::ActiveRecord::Base
     self.table_name = 'simple_group_combinations'
 
-    if ::ActiveRecord::VERSION::MAJOR < 4
-      attr_accessible :group_id, :group_type,
-                      :group_item_id, :group_item_type,
-                      :group, :group_item
-    end
-
     belongs_to :group, polymorphic: true
     belongs_to :group_item, polymorphic: true
 
