@@ -29,9 +29,18 @@ ActiveRecord::Schema.define do
   end
 end
 
-DatabaseCleaner.strategy = :truncation
+DatabaseCleaner.strategy = :transaction
 
 class Minitest::Spec
+
+  before :each do
+    DatabaseCleaner.start
+  end
+
+  after :each do
+    DatabaseCleaner.clean
+  end
+
   def self.include_context_prepare_data(&block)
     let(:user) { User.create!(name: 'user') }
 
