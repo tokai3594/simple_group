@@ -26,4 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "pry"
   spec.add_development_dependency "sqlite3"
   spec.add_development_dependency 'database_cleaner', '~> 2.0'
+  spec.add_development_dependency 'mutex_m', '~> 0.1'
+  spec.add_development_dependency 'base64', '~> 0.1'
+  spec.add_development_dependency 'bigdecimal', '~> 3.0'
 end
