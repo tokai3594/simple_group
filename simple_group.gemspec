@@ -24,8 +24,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "concurrent-ruby", '1.3.4'
   spec.add_development_dependency 'rake', '>= 12.3.3'
   spec.add_development_dependency "pry"
-  spec.add_development_dependency "sqlite3"
-  spec.add_development_dependency 'database_cleaner', '~> 2.0'
+  spec.add_development_dependency "sqlite3", '< 3.0', '>= 1.3'
+  spec.add_development_dependency 'database_cleaner', '< 3.0', '>= 1.99.0'
   spec.add_development_dependency 'mutex_m', '~> 0.1'
   spec.add_development_dependency 'base64', '~> 0.1'
   spec.add_development_dependency 'bigdecimal', '~> 3.0'
