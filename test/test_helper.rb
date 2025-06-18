@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require 'active_record'
-require 'database_cleaner/active_record'
+# database_cleaner 1～2系のどちらでも動くようにするため、パスを修正
+require 'database_cleaner'
 require 'simple_group'
 require 'pry'
 
