@@ -86,6 +86,8 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: false
+      - name: Fix gem directory permissions
+        run: sudo chmod +t $(ruby -e 'puts Gem.default_dir')/gems
       - name: Bundle install
         run: bundle install
       - name: Run tests
